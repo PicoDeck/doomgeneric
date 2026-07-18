@@ -18,7 +18,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if defined(FEATURE_SOUND) && !defined(__DJGPP__)
+// PicOS uses DG_sound_module (i_picos_sound.c); SDL_mixer is not available.
+#if defined(FEATURE_SOUND) && !defined(__DJGPP__) && defined(USE_SDL_MIXER)
 #include <SDL_mixer.h>
 #endif
 

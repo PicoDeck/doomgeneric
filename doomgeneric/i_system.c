@@ -55,8 +55,9 @@
 #include <CoreFoundation/CFUserNotification.h>
 #endif
 
-#define DEFAULT_RAM 6 /* MiB */
-#define MIN_RAM     6  /* MiB */
+// PicOS: newlib heap in stubs.c is 2.5 MiB — keep zone ≤ that.
+#define DEFAULT_RAM 2 /* MiB */
+#define MIN_RAM     2  /* MiB */
 
 
 typedef struct atexit_listentry_s atexit_listentry_t;
