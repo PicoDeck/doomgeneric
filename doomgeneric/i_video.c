@@ -132,7 +132,7 @@ typedef struct
 
 static uint16_t rgb565_palette[256];
 
-// Big-endian RGB565 palette LUT used by PicOS dg_picos.c DG_DrawFrame to
+// Big-endian RGB565 palette LUT used by PicoDeck dg_picodeck.c DG_DrawFrame to
 // blit palette-indexed I_VideoBuffer directly into the SRAM framebuffer.
 // Pre-byte-swapped so the framebuffer DMA delivers the correct byte order
 // to the big-endian ST7365P LCD, skipping the per-pixel swap done by
@@ -418,7 +418,7 @@ void I_SetPalette (byte* palette)
         colors[i].g = gammatable[usegamma][*palette++];
         colors[i].b = gammatable[usegamma][*palette++];
 
-        // Pre-compute the big-endian RGB565 LUT for dg_picos.c DG_DrawFrame.
+        // Pre-compute the big-endian RGB565 LUT for dg_picodeck.c DG_DrawFrame.
         uint16_t v = (uint16_t)(((colors[i].r & 0xF8) << 8) |
                                 ((colors[i].g & 0xFC) << 3) |
                                  (colors[i].b >> 3));

@@ -55,7 +55,7 @@
 #include <CoreFoundation/CFUserNotification.h>
 #endif
 
-// PicOS: newlib heap in stubs.c is 2.5 MiB — keep zone ≤ that.
+// PicoDeck: newlib heap in stubs.c is 2.5 MiB — keep zone ≤ that.
 #define DEFAULT_RAM 2 /* MiB */
 #define MIN_RAM     2  /* MiB */
 
